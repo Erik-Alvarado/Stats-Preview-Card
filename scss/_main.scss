@@ -1,0 +1,126 @@
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 25px;
+  background-color: $darkBlue;
+  .card-contain {
+    .stat-card {
+      background-color: $desatDarkBlue;
+      height: 450px;
+      width: 1100px;
+      border-radius: 10px;
+      display: flex;
+      transition: ease 0.5s;
+      overflow: hidden;
+      transform: translateY(-200%);
+      opacity: 0;
+      @include breakpoint-down(x-small) {
+        height: 600px;
+        width: 450px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .card-text {
+        width: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 75px;
+        @include breakpoint-down(medium) {
+          padding: 40px;
+        }
+        @include breakpoint-down(x-small) {
+          text-align: center;
+        }
+        @media (max-width: 425px) {
+          padding: 15px;
+        }
+        h1 {
+          color: $base;
+          font-size: 2rem;
+          margin-bottom: 25px;
+          @media (max-width: 425px) {
+            font-size: 1.875rem;
+            margin-bottom: 10px;
+          }
+          span {
+            color: $softViolet;
+          }
+        }
+        p {
+          color: $slightWhiteParagraph;
+          margin-bottom: 50px;
+          line-height: 25px;
+          @include breakpoint-down(x-small) {
+            margin-bottom: 25px;
+          }
+        }
+        .stats {
+          margin-top: 50px;
+          display: flex;
+          justify-content: space-between;
+          width: 300px;
+          color: $slighWhiteHeading;
+          @include breakpoint-down(x-small) {
+            flex-direction: column;
+            width: 100%;
+            margin-top: 0;
+          }
+          .stat-1,
+          .stat-2,
+          .stat-3 {
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            transition: ease 0.3s;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+          h2 {
+            text-transform: none;
+            color: $base;
+          }
+        }
+      }
+      .card-img {
+        background-color: $softViolet;
+        background-blend-mode: multiply;
+        background-image: url("/images/image-header-desktop.jpg");
+        height: 100%;
+        background-size: cover;
+        width: 550px;
+        background-repeat: no-repeat;
+        border-radius: 0 10px 10px 0;
+        transition: all 0.5s;
+        &:hover {
+          transform: scale(1.1);
+        }
+        @include breakpoint-down(x-small) {
+          border-radius: 10px 10px 0 0;
+        }
+      }
+    }
+    .intro {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    color: $slighWhiteHeading;
+    @media (max-width: 425px) {
+      width: 250px;
+    }
+    a {
+      text-decoration: none;
+      color: $softViolet;
+    }
+  }
+}
